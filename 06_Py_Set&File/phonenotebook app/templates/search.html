@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if contact %}
+        <p>Name: {{ name }}</p>
+        <p>Phone: {{ contact['phone'] }}</p>
+        <p>Email: {{ contact['email'] }}</p>
+    {% else %}
+        <p>{{ name }} not found in the phone book.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

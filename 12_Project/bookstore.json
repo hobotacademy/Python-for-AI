@@ -1,0 +1,18 @@
+{
+    "fox in the jungle": {
+        "price": 1000.0,
+        "author": "jack"
+    },
+    "fox": {
+        "price": 2000.0,
+        "author": "john"
+    },
+    "this is life": {
+        "price": 3000.0,
+        "author": "david"
+    },
+    "game of life": {
+        "price": 4300.0,
+        "author": "james"
+    }
+}

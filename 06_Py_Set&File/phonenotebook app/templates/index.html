@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+</head>
+<body>
+    <h1>Phone Book</h1>
+    
+    <h2>Add New Contact</h2>
+    <form action="{{ url_for('add_contact_route') }}" method="post">
+        <label>Name: <input type="text" name="name" required></label><br>
+        <label>Phone: <input type="text" name="phone" required></label><br>
+        <label>Email: <input type="email" name="email" required></label><br>
+        <button type="submit">Add Contact</button>
+    </form>
+    
+    <h2>Search for a Contact</h2>
+    <form action="{{ url_for('search_contact_route') }}" method="post">
+        <label>Name: <input type="text" name="name" required></label>
+        <button type="submit">Search</button>
+    </form>
+    
+    <h2>All Contacts</h2>
+    <ul>
+        {% for name, info in phone_book.items() %}
+            <li>{{ name }} - Phone: {{ info['phone'] }}, Email: {{ info['email'] }} 
+                <a href="{{ url_for('delete_contact_route', name=name) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
